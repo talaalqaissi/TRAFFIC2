@@ -1,0 +1,29 @@
+﻿@model TRAFFIC2.Models.Testimonial
+
+@{
+    ViewData["Title"] = "Review Testimonial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Review Testimonial</h1>
+
+<p>
+    <tr>Testimonial Text:</tr> @Model.TestimonialText
+</p>
+<p>
+    <tr>Status:</tr> @Model.Status
+</p>
+<p>
+    <tr>User:</tr> @Model.User.UserId
+</p>
+
+<form asp-action="Accept" asp-route-id="@Model.TestimonialId" method="post">
+    <button type="submit" class="btn btn-success">Accept</button>
+</form>
+
+<form asp-action="Reject" asp-route-id="@Model.TestimonialId" method="post">
+    <button type="submit" class="btn btn-danger">Reject</button>
+</form>
+
+<a asp-action="Index">Back to List</a>
+

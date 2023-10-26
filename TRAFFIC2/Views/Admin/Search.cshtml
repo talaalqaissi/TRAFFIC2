@@ -1,0 +1,60 @@
+﻿@model IEnumerable< TRAFFIC2.Models.Violation>
+
+@{
+
+    Layout = "~/Views/Shared/_crudLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-6">
+        <form action="Search" method="post">
+            <input type="date" class="form-control" name="stratDate" placeholder="Start Date">
+            <input type="date" class="form-control" name="endDate" placeholder="End Date">
+
+            <button type="submit" class="btn btn-dark">Search</button>
+
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-10">
+        <table class="table table-dark table-bordered" example">
+            <thead>
+                <tr>
+                    <th>User First Name </th>
+                    <th>User Last Name </th>
+                    <th>Violation Location </th>
+                    <th>Description</th>
+                    <th>ViolationDate</th>
+                    <th>AdditionalNotes</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.User.FirstName)
+                        </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ViolationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdditionalNotes)
+                    </td>
+                        </tr>
+                    }
+            
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,136 @@
+﻿@{
+	var images = ViewData["Images"] as IEnumerable<TRAFFIC2.Models.Image>;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="~/HomeAssets/favicon.png">
+
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap4" />
+
+	<!-- Bootstrap CSS -->
+	<link href="~/HomeAssets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="~/HomeAssets/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="~/HomeAssets/css/tiny-slider.css" rel="stylesheet">
+	<link href="~/HomeAssets/css/style.css" rel="stylesheet">
+	<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
+</head>
+
+<body>
+
+	
+	<!-- Start Header/Navigation -->
+	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+		<div class="container">
+			<a class="navbar-brand" href="index.html">Traffic Violations <span>.</span></a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarsFurni">
+				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+					<li class="nav-item active">
+						<a class="nav-link" asp-action="UserHome">HomePages</a>
+					</li>
+				<li><a class="nav-link" href="~/HomePages/UserAbout" >About us</a></li>
+			       <li><a class="nav-link" href="~/HomePages/ContactUsPage">Contact us</a></li>
+				</ul>
+
+				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+					<li><a class="nav-link" href="#"><img src="~/HomeAssets/images/user.svg"></a></li>
+					<li><a class="nav-link" href="~/HomeAssets/cart.html"><img src="~/HomeAssets/images/cart.svg"></a></li>
+				</ul>
+			</div>
+		</div>
+
+	</nav>
+	<!-- End Header/Navigation -->
+</div>
+	
+
+	<!-- End Hero Section -->
+	<main>
+		@RenderBody();
+	</main>
+
+	<br />
+	<br />
+
+	<br />
+	<!-- Start Footer Section -->
+	<footer class="footer-section">
+		<div class="container relative">
+			<div class="row g-5 mb-5">
+				
+				<div class="col-lg-4">
+					<div class="mb-4 footer-logo-wrap">
+						<a  class="footer-logo">
+							Your One-Stop Solution for Managing Car Violations  !
+							<span>.</span>
+						</a>
+					</div>
+					<p class="mb-4">
+						"Welcome to Traffic Violations, your one-stop solution for effortlessly managing and settling car violations. We understand that navigating through a sea of traffic offenses can be challenging. Our website is designed to simplify the process, making it easier for you to stay on top of your violations, anytime and anywhere."
+				    </p>
+			  </div>	
+			</div>
+				<!-- This column will contain the images -->
+			@foreach (var image in Model.Item1)
+			{
+
+				<div class="sofa-img">
+				<img src=@Url.Content("~/images/"+image.ImagePath1) width="400" height="400" />
+			</div>
+			
+			<br />
+			<br />
+					<br />
+			    <div class="trafic-img">
+					<img src=@Url.Content("~/images/"+image.ImagePath2) width="400" height="400" />
+				</div>
+				<div class="violation-img">
+					<img src=@Url.Content("~/images/"+image.ImagePath3) width="400" height="400" />
+				</div>
+			}
+			<div class="row g-5 mb-5">
+				<div class="col-lg-4">
+					<div class="mb-4 footer-logo-wrap"><a href="~/HomePages/UserAbout" class="footer-logo">Why Us !<span>.</span></a></div>
+					<p class="mb-4">Our user-friendly system allows you to effortlessly track all violations associated with your vehicles. No more guesswork or confusion</p>
+
+					
+				</div>
+
+			</div>
+
+			<div class="border-top copyright">
+				<div class="row pt-4">
+					<div class="col-lg-6">
+						<p class="mb-2 text-center text-lg-start">
+							Copyright &copy;<script>document.write(new Date().getFullYear());</script>. Traffic Violations. All Rights Reserved. 
+						</p>
+					</div>
+
+					
+
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	<!-- End Footer Section -->
+
+
+	<script src="~/HomeAssets/js/bootstrap.bundle.min.js"></script>
+	<script src="~/HomeAssets/js/tiny-slider.js"></script>
+	<script src="~/HomeAssets/js/custom.js"></script>
+</body>
+
+</html>
+

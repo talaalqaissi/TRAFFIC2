@@ -1,0 +1,70 @@
+﻿@model IEnumerable< TRAFFIC2.Models.HomePage>
+@{
+
+    Layout = "~/Views/Shared/_crudLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-dark table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.About)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Testimonial)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.About.AboutId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact.ContactId)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Image.ImageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Testimonial.TestimonialId)
+                   @*<a href="../Controllers/TestimonialsController.cs"> Add Your Opinion </a>
+                   <input type="button" value="Some text" onclick="@("window.location.href='" + @Url.Action("Create", "TestimonialsController") + "'");" />*@
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HomeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HomeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HomeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

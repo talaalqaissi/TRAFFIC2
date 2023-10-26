@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TRAFFIC2.Models.Testimonial>
+
+@{
+
+    Layout = "~/Views/Shared/_crudLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+@*    <a asp-action="Create">Create New</a>
+*@</p>
+<table class="table table-dark table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TestimonialText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TestimonialText)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+
+                <td>
+                    <a asp-controller="Testimonials" asp-action="Review" asp-route-id="@item.TestimonialId">Review</a>
+@*                    <a asp-action="Edit" asp-route-id="@item.TestimonialId">Edit</a> |
+*@                    <a asp-action="Details" asp-route-id="@item.TestimonialId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.TestimonialId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

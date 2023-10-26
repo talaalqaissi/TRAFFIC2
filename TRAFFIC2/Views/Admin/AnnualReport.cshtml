@@ -1,0 +1,34 @@
+﻿@*@model IEnumerable<TRAFFIC2.Models.Violation>
+
+
+@{
+    ViewData["Title"] = "Annual Reports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Annual Reports</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Total Violations</th>
+            <th>Total Users</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@ViewBag.StartDate </td>
+                <td>@ViewBag.TotalViolations</td>
+                <td>@Html.DisplayFor(modelItem => item.User.FirstName)</td>
+                <!-- Add more columns as needed -->
+            </tr>
+        }
+    </tbody>
+</table>*@
+
+
+
+

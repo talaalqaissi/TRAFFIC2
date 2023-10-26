@@ -1,0 +1,118 @@
+﻿@model TRAFFIC2.Models.Car
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<!-- Violations Count Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-12">
+            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                <div class="ms-3">
+                    <p class="mb-2"> <h3> You have : </h3></p>
+                    
+                    <h3 class="mb-0">@ViewBag.ViolationsCount  Violations </h3>
+                    <h3> <a href="~/Violations/UserIndex"> View </a> </h3>
+
+                </div>
+            </div>
+        </div>
+        <!-- Violations Count End -->
+        <!--Start Form to submit testimonial -->
+
+        <div class="col-sm-12 col-xl-12">
+            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                <div class="ms-3">
+                    <p class="mb-2"><h5>If you've used our services, we'd love to hear from you </h5> </p>
+
+                    <h4> <a href="~/User/SubmitTestimonial">Tell Us Your Experience</a></h4>
+                    
+                    <h6 class="mb-0"></h6>
+                </div>
+            </div>
+        </div>
+        <!--End Form to submit testimonial -->
+        
+        <div class="col-sm-12 col-xl-12">
+            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+              
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ADD CAR -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-secondary text-center rounded p-4">
+                <h6 class="mb-0">Add your cars to unlock enhanced features for tracking and managing violations.</h6>
+                <br />
+                <div class="d-flex align-items-center justify-content-between mb-0">
+                    <form asp-controller="User" asp-action="AddCar" method="post">
+                      <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div hidden class="form-group">
+                            <label asp-for="UserId" class="control-label"></label>
+                            <input asp-for="UserId" class="form-control" />
+                            <span asp-validation-for="UserId" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Carname" class="control-label"></label>
+                            <input asp-for="Carname" class="form-control" />
+                            <span asp-validation-for="Carname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Model" class="control-label"></label>
+                            <input asp-for="Model" class="form-control" />
+                            <span asp-validation-for="Model" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Year" class="control-label"></label>
+                            <input asp-for="Year" class="form-control" />
+                            <span asp-validation-for="Year" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Color" class="control-label"></label>
+                            <input asp-for="Color" class="form-control" />
+                            <span asp-validation-for="Color" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LicensePlate" class="control-label"></label>
+                            <input asp-for="LicensePlate" class="form-control" />
+                            <span asp-validation-for="LicensePlate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+
+
+                </div>
+             
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- ADD CAR End -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0"></h6>
+           
+        </div>
+
+    </div>
+</div>
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-md-12 col-xl-4">
+               
+         
+        </div>
+    </div>
+</div>
+ 
+<!-- Widgets End -->

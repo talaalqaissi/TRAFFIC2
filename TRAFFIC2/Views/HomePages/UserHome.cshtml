@@ -1,0 +1,105 @@
+﻿@model Tuple<IEnumerable<TRAFFIC2.Models.Image>, IEnumerable<TRAFFIC2.Models.Testimonial>>
+
+
+@{
+   
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+    ViewData["Images"] = Model.Item1; // Pass the Images collection to the layout
+}
+ 
+
+
+
+
+<!-- Start Hero Section -->
+<div class="hero">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+					<!-- Start Login/Register Section -->
+					<div class="login-register-section">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 text-center">
+									<h2 class="section-title">Get Started</h2>
+									<p style="color:black">If you already have an account, log in. If not, register now.</p>
+									<a href="~/LoginRegister/Login" class="btn btn-primary me-2">Login</a>
+									<a href="~/LoginRegister/Register" class="btn btn-secondary">Register</a>
+								</div>
+							</div>
+						</div>
+					</div>
+                   
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="hero-img-wrap">
+@*                    <img src="~/HomeAssets/images/images.jpg" class="img-fluid">
+*@                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+	
+	<!-- Start Testimonial Slider -->
+	<div class="testimonial-section">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-7 mx-auto text-center">
+					<h2 class="section-title">Testimonials</h2>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-lg-12">
+					<div class="testimonial-slider-wrap text-center">
+
+						<div id="testimonial-nav">
+							<span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
+							<span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+						</div>
+
+						<div class="testimonial-slider">
+
+
+						@foreach (var testimonial in Model.Item2) {
+							<div class="item">
+								<div class="row justify-content-center">
+									<div class="col-lg-8 mx-auto">
+
+										<div class="testimonial-block text-center">
+											<blockquote class="mb-5">
+												@if (testimonial.TestimonialText != null)
+												{
+													<p>@testimonial.TestimonialText</p>
+												}
+											</blockquote>
+
+											<div class="author-info">
+
+												<h3 class="font-weight-bold">@ViewBag.User</h3>
+												<span class="position d-block mb-3"></span>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							}							<!-- END item -->
+
+						
+						
+							
+
+				 </div>
+				</div>
+			</div>
+		</div>
+   </div>
+</div>
+
+	<!-- End Testimonial Slider -->

@@ -1,0 +1,29 @@
+﻿@model OrderEntity
+
+@{
+
+    Layout = "~/Views/Shared/_crudLayout.cshtml";
+}
+
+<div class="row">
+    <div classclass="col-md-4">
+      <form asp-action="InitiateOrder" >
+            <div class="form-group">
+                <label asp-for="UserName" class="form-control"></label>
+                <input asp-action="UserName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="form-control"></label>
+            <input asp-action="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalAmount" class="form-control"></label>
+                <input asp-action="TotalAmount" class="form-control" />
+             </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Continue To Pay" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
